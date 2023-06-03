@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+
+    <title>Puskesmas Pa Oyon</title>
+  </head>
+
+  <body style="background-color: #edf1d6">
+    <nav
+      class="navbar navbar-expand-lg navbar-dark"
+      style="background-color: #609966"
+    >
+      <a class="navbar-brand" href="#"
+        ><img src="./view/assets/logo.png" alt="Logo" width="55" height="37"
+      /></a>
+      <a class="navbar-brand ml-2 mt-1" href="#">Puskesmas Pa Oyon</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </nav>
+    <div class="container mt-5 pt-2">
+      <div class="row">
+        <div class="col-6 my-3">
+          <h3 style="color: #40513b">TABEL PASIEN</h3>
+        </div>
+        <div class="col-6 my-3 d-flex justify-content-end">
+          <a
+            type="button"
+            href="index"
+            class="btn btn-primary nav-link active"
+            data-toggle="modal"
+            data-target="#exampleModal"
+            style="
+              width: 130px;
+              background-color: #9dc08b;
+              border-color: #9dc08b;
+            "
+            >Tambah Data</a
+          >
+        </div>
+      </div>
+      <table align="left" border="1" class="table" style="text-align: center">
+        <thead style="background-color: #609966; color: #ffffff">
+          <tr>
+            <th scope="col">NO</th>
+            <th scope="col">NIK</th>
+            <th scope="col">NAMA</th>
+            <th scope="col">TEMPAT</th>
+            <th scope="col">TANGGAL LAHIR</th>
+            <th scope="col">JENIS KELAMIN</th>
+            <th scope="col">ALAMAT EMAIL</th>
+            <th scope="col">TELEPON</th>
+            <th scope="col">AKSI</th>
+          </tr>
+        </thead>
+        <tr>
+          DATA_TABEL
+        </tr>
+      </table>
+    </div>
+
+    <!-- Modal tambah data pasein -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content" style="background-color: #edf1d6">
+          <div class="modal-header" style="border-color: #40513b">
+            <h5
+              class="modal-title"
+              id="exampleModalLabel"
+              style="color: #40513b"
+            >
+              Tambah Data Pasien
+            </h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" style="border-top-color: #40513b">
+            <!-- FORM TAMBAH DATA-->
+            <form action="index.php" method="POST" id="form-create">
+              <div class="form-group">
+                <label for="nik" style="color: #40513b">NIK</label>
+                <input
+                  required
+                  type="text"
+                  class="form-control"
+                  name="nik"
+                  placeholder="Masukkan NIK"
+                />
+              </div>
+              <div class="form-group">
+                <label for="nama" style="color: #40513b">Nama</label>
+                <input
+                  required
+                  type="text"
+                  class="form-control"
+                  name="nama"
+                  placeholder="Masukkan Nama"
+                />
+              </div>
+              <div class="form-group">
+                <label for="tempat" style="color: #40513b">Tempat</label>
+                <input
+                  required
+                  type="text"
+                  class="form-control"
+                  name="tempat"
+                  placeholder="Masukkan Tempat"
+                />
+              </div>
+              <div class="form-group">
+                <label for="tl" style="color: #40513b">Tanggal Lahir</label>
+                <input
+                  required
+                  type="date"
+                  class="form-control"
+                  name="tl"
+                  placeholder="Masukkan Tanggal Lahir"
+                />
+              </div>
+              <div class="form-group">
+                <label for="gender" style="color: #40513b">Jenis Kelamin</label>
+                <select class="form-control" name="gender">
+                  <option>Laki-laki</option>
+                  <option>Perempuan</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="email" style="color: #40513b">Alamat Email</label>
+                <input
+                  required
+                  type="email"
+                  class="form-control"
+                  name="email"
+                  placeholder="Masukkan Alamat Email"
+                />
+              </div>
+              <div class="form-group">
+                <label for="telepon" style="color: #40513b">Telepon</label>
+                <input
+                  required
+                  type="text"
+                  class="form-control"
+                  name="telp"
+                  placeholder="Masukkan Nomor Telepon"
+                />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer" style="border-top-color: #40513b">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              type="submit"
+              name="add_data"
+              class="btn"
+              form="form-create"
+              style="
+                color: #ffffff;
+                background-color: #9dc08b;
+                border-color: #9dc08b;
+              "
+            >
+              Tambah
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      document
+        .getElementsById("add-data")
+        .addEventListener("click", function () {
+          var modal = document.getElementById("exampleModal");
+          modal.style.display = "block";
+        });
+
+      // Menangani tombol "Tutup" di dalam modal
+      var closeButton = document.getElementsByClassName("close")[0];
+      closeButton.addEventListener("click", function () {
+        var modal = document.getElementById("myModal");
+        modal.style.display = "none";
+      });
+
+      // Menutup modal saat pengguna mengklik di luar area modal
+      window.addEventListener("click", function (event) {
+        var modal = document.getElementById("myModal");
+        if (event.target === modal) {
+          modal.style.display = "none";
+        }
+      });
+    </script>
+  </body>
+</html>
